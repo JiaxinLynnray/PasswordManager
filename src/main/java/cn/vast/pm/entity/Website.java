@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class Website {
     /** 网站ID */
-    private long wid;
+    private long websiteId;
     /** 网站名称 */
     private String websiteName;
     /** 网站地址 */
@@ -16,20 +16,20 @@ public class Website {
     /** 上次更新时间 */
     private Date lastUpdate;
 
-    public Website(long wid, String websiteName, String websiteUrl, String login, String password) {
-        this.wid = wid;
+    public Website(long websiteId, String websiteName, String websiteUrl, String login, String password) {
+        this.websiteId = websiteId;
         this.websiteName = websiteName;
         this.websiteUrl = websiteUrl;
         this.login = login;
         this.password = password;
     }
 
-    public long getWid() {
-        return wid;
+    public long getWebsiteId() {
+        return websiteId;
     }
 
-    public void setWid(long wid) {
-        this.wid = wid;
+    public void setWebsiteId(long websiteId) {
+        this.websiteId = websiteId;
     }
 
     public String getWebsiteName() {
@@ -75,7 +75,7 @@ public class Website {
     @Override
     public String toString() {
         return "Website{" +
-                "wid=" + wid +
+                "websiteId=" + websiteId +
                 ", websiteName='" + websiteName + '\'' +
                 ", websiteUrl='" + websiteUrl + '\'' +
                 ", login='" + login + '\'' +

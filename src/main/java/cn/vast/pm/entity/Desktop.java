@@ -2,9 +2,12 @@ package cn.vast.pm.entity;
 
 import java.util.Date;
 
+/**
+ * @author Lynnray
+ */
 public class Desktop {
     /** 桌面应用程序ID */
-    private long did;
+    private long desktopId;
     /** 桌面应用程序名称 */
     private String desktopName;
     /** 登录账号 */
@@ -14,19 +17,19 @@ public class Desktop {
     /** 上次更新时间 */
     private Date lastUpdate;
 
-    public Desktop(long did, String desktopName, String login, String password) {
-        this.did = did;
+    public Desktop(long desktopId, String desktopName, String login, String password) {
+        this.desktopId = desktopId;
         this.desktopName = desktopName;
         this.login = login;
         this.password = password;
     }
 
-    public long getDid() {
-        return did;
+    public long getDesktopId() {
+        return desktopId;
     }
 
-    public void setDid(long did) {
-        this.did = did;
+    public void setDesktopId(long desktopId) {
+        this.desktopId = desktopId;
     }
 
     public String getDesktopName() {
@@ -64,7 +67,7 @@ public class Desktop {
     @Override
     public String toString() {
         return "Desktop{" +
-                "did=" + did +
+                "desktopId=" + desktopId +
                 ", desktopName='" + desktopName + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +

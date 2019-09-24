@@ -2,7 +2,7 @@ package cn.vast.pm.entity;
 
 public class User {
     /** 用户ID */
-    private long uid;
+    private long userId;
     /** 用户名 */
     private String username;
     /** 密码 */
@@ -18,18 +18,18 @@ public class User {
     /** 桌面应用程序集合 */
     private Desktop[] desktops;
 
-    public User(long uid, String username, String password) {
-        this.uid = uid;
+    public User(long userId, String username, String password) {
+        this.userId = userId;
         this.username = username;
         this.password = password;
     }
 
-    public long getUid() {
-        return uid;
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUid(long uid) {
-        this.uid = uid;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
     public String getUsername() {
@@ -67,7 +67,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                "uid=" + uid +
+                "userId=" + userId +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +

@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class App {
     /** APP ID */
-    private long aid;
+    private long appId;
     /** APP名称 */
     private String appName;
     /** 登录账号 */
@@ -16,20 +16,20 @@ public class App {
     /** 上次更新时间 */
     private Date lastUpdate;
 
-    public App(long aid, String appName, String login, String password, int loginType) {
-        this.aid = aid;
+    public App(long appId, String appName, String login, String password, int loginType) {
+        this.appId = appId;
         this.appName = appName;
         this.login = login;
         this.password = password;
         this.loginType = loginType;
     }
 
-    public long getAid() {
-        return aid;
+    public long getAppId() {
+        return appId;
     }
 
-    public void setAid(long aid) {
-        this.aid = aid;
+    public void setAppId(long appId) {
+        this.appId = appId;
     }
 
     public String getAppName() {
@@ -75,7 +75,7 @@ public class App {
     @Override
     public String toString() {
         return "App{" +
-                "aid=" + aid +
+                "appId=" + appId +
                 ", appName='" + appName + '\'' +
                 ", login='" + login + '\'' +
                 ", password='" + password + '\'' +
