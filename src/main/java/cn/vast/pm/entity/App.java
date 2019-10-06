@@ -2,33 +2,37 @@ package cn.vast.pm.entity;
 
 import java.util.Date;
 
+/**
+ * @author Lynnray
+ * @version 1.0
+ * @date 2019/9/25 21:29
+ */
 public class App {
     /** APP ID */
-    private long appId;
+    private Long appId;
     /** APP名称 */
     private String appName;
     /** 登录账号 */
-    private String login;
+    private String loginName;
     /** 登录密码 */
     private String password;
     /** 登录类型 */
-    private int loginType;
+    private Integer loginType;
     /** 上次更新时间 */
     private Date lastUpdate;
 
-    public App(long appId, String appName, String login, String password, int loginType) {
-        this.appId = appId;
+    public App(String appName, String loginName, String password, Integer loginType) {
         this.appName = appName;
-        this.login = login;
+        this.loginName = loginName;
         this.password = password;
         this.loginType = loginType;
     }
 
-    public long getAppId() {
+    public Long getAppId() {
         return appId;
     }
 
-    public void setAppId(long appId) {
+    public void setAppId(Long appId) {
         this.appId = appId;
     }
 
@@ -40,12 +44,12 @@ public class App {
         this.appName = appName;
     }
 
-    public String getLogin() {
-        return login;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
 
     public String getPassword() {
@@ -56,11 +60,11 @@ public class App {
         this.password = password;
     }
 
-    public int getLoginType() {
+    public Integer getLoginType() {
         return loginType;
     }
 
-    public void setLoginType(int loginType) {
+    public void setLoginType(Integer loginType) {
         this.loginType = loginType;
     }
 
@@ -77,7 +81,7 @@ public class App {
         return "App{" +
                 "appId=" + appId +
                 ", appName='" + appName + '\'' +
-                ", login='" + login + '\'' +
+                ", loginName='" + loginName + '\'' +
                 ", password='" + password + '\'' +
                 ", loginType=" + loginType +
                 ", lastUpdate=" + lastUpdate +

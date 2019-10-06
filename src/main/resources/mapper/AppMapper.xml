@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.vast.pm.dao.AppDAO">
+
+    <select id="queryById" resultType="App" parameterType="Long">
+        SELECT
+            app_id,
+            app_name,
+            login_name,
+            password,
+            login_type,
+            last_update
+        FROM app
+        WHERE app_id = #{id}
+    </select>
+
+    <select id="queryByName" resultType="App" parameterType="String">
+        SELECT
+            app_id,
+            app_name,
+            login_name,
+            password,
+            login_type,
+            last_update
+        FROM app
+        WHERE app_name LIKE '%' + #{id} + '%';
+    </select>
+
+    <select id="queryAll" resultType="App">
+        SELECT
+            app_id,
+            app_name,
+            login_name,
+            password,
+            login_type,
+            last_update
+        FROM app
+        ORDER BY app_id
+        LIMIT #{offset}, #{limit}
+    </select>
+
+    <insert id="createApp" parameterType="App">
+        INSERT INTO
+            app (app_name, login_name, password, login_type, last_update)
+        VALUES
+            (#{appName}, #{loginName}, #{password}, #{loginType}, #{lastUpdate});
+    </insert>
+
+    <update id="updateApp" parameterType="App">
+        UPDATE app
+        SET
+            app_name    = #{appName},
+            login_name  = #{loginName},
+            password    = #{password},
+            login_type  = #{loginType},
+            last_update = #{lastUpdate}
+        WHERE app_id = #{appId};
+    </update>
+
+    <delete id="deleteApp" parameterType="Long">
+        DELETE
+        FROM app
+        WHERE app_id = #{id};
+    </delete>
+</mapper>

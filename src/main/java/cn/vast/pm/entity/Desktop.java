@@ -4,31 +4,32 @@ import java.util.Date;
 
 /**
  * @author Lynnray
+ * @date 2019/9/25 21:25
+ * @version 1.0
  */
 public class Desktop {
     /** 桌面应用程序ID */
-    private long desktopId;
+    private Long desktopId;
     /** 桌面应用程序名称 */
     private String desktopName;
     /** 登录账号 */
-    private String login;
+    private String loginName;
     /** 登录密码 */
     private String password;
     /** 上次更新时间 */
     private Date lastUpdate;
 
-    public Desktop(long desktopId, String desktopName, String login, String password) {
-        this.desktopId = desktopId;
+    public Desktop(String desktopName, String loginName, String password) {
         this.desktopName = desktopName;
-        this.login = login;
+        this.loginName = loginName;
         this.password = password;
     }
 
-    public long getDesktopId() {
+    public Long getDesktopId() {
         return desktopId;
     }
 
-    public void setDesktopId(long desktopId) {
+    public void setDesktopId(Long desktopId) {
         this.desktopId = desktopId;
     }
 
@@ -40,12 +41,12 @@ public class Desktop {
         this.desktopName = desktopName;
     }
 
-    public String getLogin() {
-        return login;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
 
     public String getPassword() {
@@ -69,7 +70,7 @@ public class Desktop {
         return "Desktop{" +
                 "desktopId=" + desktopId +
                 ", desktopName='" + desktopName + '\'' +
-                ", login='" + login + '\'' +
+                ", loginName='" + loginName + '\'' +
                 ", password='" + password + '\'' +
                 ", lastUpdate=" + lastUpdate +
                 '}';

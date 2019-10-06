@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.vast.pm.dao.DesktopDAO">
+    <select id="queryById" resultType="Desktop" parameterType="Long">
+        SELECT
+            desktop_id,
+            desktop_name,
+            login_name,
+            password,
+            last_update
+        FROM desktop
+        WHERE desktop_id = #{id}
+    </select>
+
+    <select id="queryByName" resultType="Desktop" parameterType="String">
+        SELECT
+            desktop_id,
+            desktop_name,
+            login_name,
+            password,
+            last_update
+        FROM desktop
+        WHERE desktop_name LIKE '%' + #{id} + '%';
+    </select>
+
+    <select id="queryAll" resultType="Desktop">
+        SELECT
+            desktop_id,
+            desktop_name,
+            login_name,
+            password,
+            last_update
+        FROM desktop
+        ORDER BY desktop_id
+        LIMIT #{offset}, #{limit}
+    </select>
+
+    <insert id="createDesktop" parameterType="Desktop">
+        INSERT INTO
+            desktop (desktop_name, login_name, password, last_update)
+        VALUES
+            (#{desktopName}, #{loginName}, #{password}, #{lastUpdate});
+    </insert>
+
+    <update id="updateDesktop" parameterType="Desktop">
+        UPDATE desktop
+        SET
+            desktop_name    = #{desktopName},
+            login_name  = #{loginName},
+            password    = #{password},
+            last_update = #{lastUpdate}
+        WHERE desktop_id = #{desktopId};
+    </update>
+
+    <delete id="deleteDesktop" parameterType="Long">
+        DELETE
+        FROM desktop
+        WHERE desktop_id = #{id};
+    </delete>
+</mapper>

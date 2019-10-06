@@ -1,8 +1,15 @@
 package cn.vast.pm.entity;
 
+/**
+ * @author Lynnray
+ * @version 1.0
+ * @date 2019/9/25 21:23
+ */
 public class User {
     /** 用户ID */
-    private long userId;
+    private Long userId;
+    /** 昵称 */
+    private String nick;
     /** 用户名 */
     private String username;
     /** 密码 */
@@ -11,24 +18,18 @@ public class User {
     private String email;
     /** 手机号 */
     private String phone;
-    /** APP集合 */
-    private App[] apps;
-    /** 网站集合 */
-    private Website[] websites;
-    /** 桌面应用程序集合 */
-    private Desktop[] desktops;
 
-    public User(long userId, String username, String password) {
-        this.userId = userId;
+    public User(String username, String nick, String password) {
         this.username = username;
+        this.nick = nick;
         this.password = password;
     }
 
-    public long getUserId() {
+    public Long getUserId() {
         return userId;
     }
 
-    public void setUserId(long userId) {
+    public void setUserId(Long userId) {
         this.userId = userId;
     }
 
@@ -38,6 +39,14 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getNick() {
+        return nick;
+    }
+
+    public void setNick(String nick) {
+        this.nick = nick;
     }
 
     public String getPassword() {
@@ -69,6 +78,7 @@ public class User {
         return "User{" +
                 "userId=" + userId +
                 ", username='" + username + '\'' +
+                ", nick='" + nick + '\'' +
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", phone='" + phone + '\'' +

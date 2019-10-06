@@ -2,33 +2,37 @@ package cn.vast.pm.entity;
 
 import java.util.Date;
 
+/**
+ * @author Lynnray
+ * @version 1.0
+ * @date 2019/9/25 21:29
+ */
 public class Website {
     /** 网站ID */
-    private long websiteId;
+    private Long websiteId;
     /** 网站名称 */
     private String websiteName;
     /** 网站地址 */
     private String websiteUrl;
     /** 登录账号 */
-    private String login;
+    private String loginName;
     /** 登录密码 */
     private String password;
     /** 上次更新时间 */
     private Date lastUpdate;
 
-    public Website(long websiteId, String websiteName, String websiteUrl, String login, String password) {
-        this.websiteId = websiteId;
+    public Website(String websiteName, String websiteUrl, String loginName, String password) {
         this.websiteName = websiteName;
         this.websiteUrl = websiteUrl;
-        this.login = login;
+        this.loginName = loginName;
         this.password = password;
     }
 
-    public long getWebsiteId() {
+    public Long getWebsiteId() {
         return websiteId;
     }
 
-    public void setWebsiteId(long websiteId) {
+    public void setWebsiteId(Long websiteId) {
         this.websiteId = websiteId;
     }
 
@@ -48,12 +52,12 @@ public class Website {
         this.websiteUrl = websiteUrl;
     }
 
-    public String getLogin() {
-        return login;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setLogin(String login) {
-        this.login = login;
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
 
     public String getPassword() {
@@ -78,7 +82,7 @@ public class Website {
                 "websiteId=" + websiteId +
                 ", websiteName='" + websiteName + '\'' +
                 ", websiteUrl='" + websiteUrl + '\'' +
-                ", login='" + login + '\'' +
+                ", loginName='" + loginName + '\'' +
                 ", password='" + password + '\'' +
                 ", lastUpdate=" + lastUpdate +
                 '}';

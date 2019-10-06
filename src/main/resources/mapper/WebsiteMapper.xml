@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.vast.pm.dao.WebsiteDAO">
+    <select id="queryById" resultType="Website" parameterType="Long">
+        SELECT
+            website_id,
+            website_name,
+            website_url,
+            login_name,
+            password,
+            last_update
+        FROM website
+        WHERE website_id = #{id};
+    </select>
+
+    <select id="queryByName" resultType="Website" parameterType="String">
+        SELECT
+            website_id,
+            website_name,
+            website_url,
+            login_name,
+            password,
+            last_update
+        FROM website
+        WHERE website_name LIKE '%' + #{id} + '%';
+    </select>
+
+    <select id="queryAll" resultType="Website">
+        SELECT
+            website_id,
+            website_name,
+            website_url,
+            login_name,
+            password,
+            last_update
+        FROM website
+        ORDER BY website_id
+        LIMIT #{offset}, #{limit}
+    </select>
+
+    <insert id="createWebsite" parameterType="Website">
+        INSERT INTO
+            website (website_name, website_url, login_name, password, last_update)
+        VALUES
+            (#{websiteName}, #{websiteUrl}, #{loginName}, #{password}, #{lastUpdate});
+    </insert>
+
+    <update id="updateWebsite" parameterType="Website">
+        UPDATE website
+        SET
+            website_name = #{websiteName},
+            website_url  = #{websiteUrl},
+            login_name   = #{loginName},
+            password     = #{password},
+            last_update  = #{lastUpdate}
+        WHERE website_id = #{websiteId};
+    </update>
+
+    <delete id="deleteWebsite" parameterType="Long">
+        DELETE
+        FROM website
+        WHERE website_id = #{id};
+    </delete>
+</mapper>
