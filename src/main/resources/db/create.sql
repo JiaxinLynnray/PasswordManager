@@ -5,7 +5,7 @@ create database if not exists pm
 CREATE TABLE user (
   user_id      BIGINT(20)                       NOT NULL
   COMMENT '用户ID',
-  nick         VARCHAR(20)                      NOT NULL  DEFAULT ''
+  nick_name         VARCHAR(20)                      NOT NULL  DEFAULT ''
   COMMENT '昵称',
   username     VARCHAR(20)                      NOT NULL
   COMMENT '用户名',
