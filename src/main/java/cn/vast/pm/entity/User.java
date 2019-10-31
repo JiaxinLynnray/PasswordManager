@@ -3,33 +3,23 @@ package cn.vast.pm.entity;
 /**
  * @author Lynnray
  * @version 1.0
- * @date 2019/9/25 21:23
+ * @date 2019/10/30
  */
 public class User {
     /** 用户ID */
-    private Long userId;
-    /** 昵称 */
-    private String nick;
+    private long userId;
     /** 用户名 */
     private String username;
     /** 密码 */
     private String password;
-    /** 邮箱 */
-    private String email;
-    /** 手机号 */
-    private String phone;
+    /** 昵称 */
+    private String nickName;
 
-    public User(String username, String nick, String password) {
-        this.username = username;
-        this.nick = nick;
-        this.password = password;
-    }
-
-    public Long getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
@@ -41,14 +31,6 @@ public class User {
         this.username = username;
     }
 
-    public String getNick() {
-        return nick;
-    }
-
-    public void setNick(String nick) {
-        this.nick = nick;
-    }
-
     public String getPassword() {
         return password;
     }
@@ -57,20 +39,12 @@ public class User {
         this.password = password;
     }
 
-    public String getEmail() {
-        return email;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getPhone() {
-        return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     @Override
@@ -78,10 +52,8 @@ public class User {
         return "User{" +
                 "userId=" + userId +
                 ", username='" + username + '\'' +
-                ", nick='" + nick + '\'' +
                 ", password='" + password + '\'' +
-                ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
+                ", nickName='" + nickName + '\'' +
                 '}';
     }
 }

@@ -1,9 +1,9 @@
 package cn.vast.pm.service.impl;
 
 /**
- * @Auther: Lynnray
- * @Date: 2019/9/23 00:16
- * @Description:
+ * @author Lynnray
+ * @version 1.0
+ * @date 2019/10/30
  */
 public class UserServiceImpl {
 }
